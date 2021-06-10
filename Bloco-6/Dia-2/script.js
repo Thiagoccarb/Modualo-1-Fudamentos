@@ -10,3 +10,13 @@ function createStates(){
     }
 }
 createStates();
+
+function clear(){
+    let inputs = document.getElementsByTagName('input');
+    for (let i = 0; i < inputs.length; i++) {
+        let element = inputs[i].value;
+        element = '';
+    }
+};
+let limpar = document.getElementsByClassName('btn btn-danger')[0];
+limpar.addEventListener('click',clear);
