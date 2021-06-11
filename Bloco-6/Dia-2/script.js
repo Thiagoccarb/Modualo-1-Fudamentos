@@ -14,9 +14,14 @@ createStates();
 function clear(){
     let inputs = document.getElementsByTagName('input');
     for (let i = 0; i < inputs.length; i++) {
-        let element = inputs[i].value;
-        element = '';
+        let element = inputs[i];
+        element.value = '';
     }
 };
 let limpar = document.getElementsByClassName('btn btn-danger')[0];
 limpar.addEventListener('click',clear);
+
+const picker = new Pikaday({ field: document.getElementById('data') });
+
+new window.JustValidate('#form', {
+});
