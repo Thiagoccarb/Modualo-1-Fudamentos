@@ -1,0 +1,31 @@
+body {
+  font-size: 1.5em;
+}
+h1 {
+  font-size: 1em;
+}
+h2 {
+}
+
+img {
+  max-width: 100%;
+}
+
+figure {
+  margin: 10px;
+}
+/* breakpoint 600px */
+@media screen and (min-width: 600px) {
+  body {
+    font-size: 2em;
+    margin: 10px 15px;
+    text-align: center;
+  }
+  p {
+      text-align: justify;
+  }
+  figure {
+      float: left;
+      width: 30%;
+  }
+}
