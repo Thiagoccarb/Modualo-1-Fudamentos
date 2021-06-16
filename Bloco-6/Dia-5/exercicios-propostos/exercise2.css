@@ -1,0 +1,45 @@
+html {
+    box-sizing: border-box;
+    font-family: sans-serif;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+/* first breakpoint (300px); */
+@media screen and (max-width:300px) {
+    body {
+        margin: 0 0 10px 0;
+        box-sizing: inherit;
+        display: flex;
+        background-color: lightgoldenrodyellow;
+    }
+}
+@media screen and (min-width:300px) {
+    body {
+        font-size: 1.2em;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+    }
+    p {
+        line-height: 25px;
+    }
+}
+@media screen and (min-width:600px) {
+    body {
+        font-size: 1.4em;
+    }
+    .container {
+        background-color: lightskyblue;
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+    }
+    p {
+        line-height: 25px;
+        margin: 40px 0;
+    }
+}
