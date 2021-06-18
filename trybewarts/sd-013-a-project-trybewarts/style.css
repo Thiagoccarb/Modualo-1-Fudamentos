@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  background-color: rgb(50, 167, 145);
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+}
+
+#login , #senha {
+  width: 100px;
+}
+
+img {
+  width: 90px;
+}
+
+.trybewarts-login {
+  display: flex;
+}
+
+h1 {
+  color: white;
+}
+
+main {
+  display: flex;
+}
+
+#evaluation-form {
+  display: flex;
+  width: 675px;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+#trybewarts-forms-logo {
+  height: 500px;
+  flex-basis: 100%;
+}
+
+#name-lastname {
+  display: flex;
+  margin: 10px;
+  justify-content: space-between;
+}
+
+#email-options {
+  display: flex;
+  margin: 10px;
+  justify-content:  space-between;
+}
+
+#family {
+  display:flex;
+  margin: 10px;
+  justify-content:  space-between;
+}
+
+.image-container {
+  display: flex;
+  width: 50%;
+}
+
+#content {
+  display: flex;
+}
+
+#evaluation {
+  display: flex;
+  justify-content: stretch;
+}
+
+#comments {
+  display: flex;
+  flex-direction: column;
+}
+.textarea-container {
+  display: flex;
+  flex-direction: column;
+}
+
+#submit {
+  display: flex;
+  justify-content: stretch;
+}
+
+footer {
+  display: flex;
+  flex-direction: row-reverse;
+  background-color: rgb(60,64,74);
+  color: white;
+  
+}
+
+footer p {
+  padding: 10px;
+  margin-right: 100px;
+}
