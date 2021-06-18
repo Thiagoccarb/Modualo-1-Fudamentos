@@ -5,7 +5,7 @@ function checkData() {
   inputButton.addEventListener('click', (e) => {
     e.preventDefault();
     if ((loginInput.value === 'tryber@teste.com') && (senhaInput.value === '123456')) {
-      alert('Olá,Tryber!');
+      alert('Olá, Tryber!');
     } else {
       alert('Login ou senha inválidos.');
     }
@@ -30,10 +30,10 @@ function counter() {
   const inputCounter = document.getElementById('counter');
   const textarea = document.getElementById('textarea');
   inputCounter.innerText = '500';
-  textarea.addEventListener('keypress', ()=>{
-    if (textarea.value.length ==1) {
+  textarea.addEventListener('keypress', () => {
+    if (textarea.value.length === 1) {
       inputCounter.innerText = '499';
-    }else {
+    } else {
       inputCounter.innerText = 500 - textarea.value.length;
     }
   });
