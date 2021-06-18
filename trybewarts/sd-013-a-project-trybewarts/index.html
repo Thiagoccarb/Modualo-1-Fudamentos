@@ -17,9 +17,7 @@
     <h1 id="trybewarts-header-title">Trybewarts</h1>
     <div>
       <form class='trybewarts-login' action='#' method='GET'>
-        <label for='login'></label>
         <input type='email' name='login' placeholder='Login' id='login'>
-        <label for='senha'></label>
         <input type='password' name='senha' placeholder='Senha' id='senha'>
         <button class='loginButton' type='submit'>Entrar</button>
       </form>
@@ -65,8 +63,8 @@
       </section>
 
       <section id="family">
-
-        <label id="label-family" for="Frontend">Qual sua família?
+        <div>
+          <p id="label-family" > Qual sua família?</p> 
           <div>
             <input type="radio" value="Frontend" name="family" id="Frontend">
             <label for="Frontend">Frontend</label>
@@ -81,13 +79,11 @@
             <input type="radio" value="FullStack" name="family" id="Fullstack">
             <label for="Fullstack">Fullstack</label>
           </div>
-
-        </label>
-
-
-        <label id="label-content" for="HoFs">Qual conteúdo você está com mais vontade de aprender?
-          <div>
-
+        </div>
+         
+        <div>
+           <label id="label-content" for="HoFs">Qual conteúdo você está com mais vontade de aprender?</label>
+         
             <input class="subject" type="checkbox" value='HoFs' name="option" id="HoFs">
             <label for="HoFs">HoFs</label>
 
@@ -108,7 +104,6 @@
 
           </div>
 
-        </label>
       </section>
 
       <section id="evaluation">
