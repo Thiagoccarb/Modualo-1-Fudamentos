@@ -29,12 +29,9 @@ prevent();
 function counter() {
   const inputCounter = document.getElementById('counter');
   const textarea = document.getElementById('textarea');
-  inputCounter.innerText = '500';
-  textarea.addEventListener('keypress', () => {
-    if (textarea.value.length === 1) {
-      inputCounter.innerText = '499';
-    } else {
-      inputCounter.innerText = 500 - textarea.value.length;
+  textarea.addEventListener('keyup', () => {
+    if (textarea.value.length >= 0) {
+      inputCounter.innerText = '500' - textarea.value.length;
     }
   });
 }

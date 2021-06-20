@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 header {
@@ -8,89 +9,119 @@ header {
   background-color: rgb(50, 167, 145);
   justify-content: space-between;
   align-items: center;
-  height: 100px;
+  height: 15vh;
 }
 
-#login , #senha {
-  width: 100px;
-}
-
-img {
-  width: 90px;
-}
-
-.trybewarts-login {
-  display: flex;
-}
-
-h1 {
+header h1 {
   color: white;
 }
 
-main {
+header .trybewarts-header-logo {
+  height: 12vh;
+}
+
+header .trybewarts-login {
   display: flex;
 }
 
-#evaluation-form {
+header .trybewarts-login #login,
+header .trybewarts-login #senha {
+  width: 100px;
+  margin: 0 10px;
+  border-radius: 5px;
+  border-style: none;
+}
+
+header .trybewarts-login .loginButton {
+  padding: 5px;
+  margin-right: 5px;
+  background-color: rgb(9, 9, 136);
+  color: white;
+  border-radius: 5px;
+  border-style: none;
+  font-weight: 700;
+}
+
+main .content-container {
+  display: flex;
+  justify-content: center;
+}
+
+main .image-container {
+  display: flex;
+  width: 35%;
+}
+
+main .content-container #evaluation-form {
   display: flex;
   width: 675px;
   flex-direction: column;
+  justify-content: center;
+
 }
 
-#trybewarts-forms-logo {
-  height: 500px;
+main .content-container .image-container #trybewarts-forms-logo {
+  height: 90vh;
   flex-basis: 100%;
 }
 
-#name-lastname {
+main .content-container #name-lastname {
   display: flex;
   margin: 10px;
   justify-content: space-between;
 }
 
-#email-options {
+main .content-container #email-options {
+  display: flex;
+  margin: 10px 10px 10px;
+  justify-content: space-between;
+}
+
+main .content-container #family {
   display: flex;
   margin: 10px;
   justify-content: space-between;
 }
 
-#family {
+main .content-container #family .checkbox-container {
   display: flex;
-  margin: 10px;
+  flex-direction: column;
   justify-content: space-between;
 }
 
-#label-family {
+main .content-container #family .checkbox-container:nth-child(2) {
+  width: 46%;
+}
+
+main .content-container #evaluation {
   display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+main .content-container #content {
+  display: flex;
+}
+
+main .content-container .textarea-container {
+  display: flex;
+  flex-direction: column;
+}
+
+main .content-container #submit {
+  display: flex;
+}
+
+#submit-btn {
+  margin-top: 10px;
+  flex-basis: 100%;
+  color: white;
+  background-color: rgb(22, 31, 3);
+  border-radius: 5px;
+  border-style: none;
+  font-weight: 700;
+  padding: 10px;
   
-}
-.image-container {
-  display: flex;
-  width: 50%;
-}
-
-#content {
-  display: flex;
-}
-
-#evaluation {
-  display: flex;
-  justify-content: stretch;
-}
-
-#comments {
-  display: flex;
-  flex-direction: column;
-}
-
-.textarea-container {
-  display: flex;
-  flex-direction: column;
-}
-
-#submit {
-  display: flex;
-  justify-content: stretch;
 }
 
 footer {
@@ -98,6 +129,7 @@ footer {
   flex-direction: row-reverse;
   background-color: rgb(60, 64, 74);
   color: whitesmoke;
+  
 }
 
 footer p {
