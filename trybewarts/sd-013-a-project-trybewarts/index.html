@@ -30,12 +30,15 @@
 
   </header>
   <main>
+
     <div class="data-container">
     </div>
+
     <section class="content-container">
+
       <form id="evaluation-form" action="#" method="GET">
 
-        <section id="name-lastname">
+        <section class="form.container" id="name-lastname">
 
           <div>
             <label for="input-name"></label>
@@ -49,16 +52,14 @@
 
         </section>
 
-        <section id="email-options">
+        <section class="form.container" id="email-options">
+          
           <div>
-
             <label for="input-email"></label>
             <input id="input-email" name="Email" placeholder="Email" type="text">
-
           </div>
 
           <div>
-
             <label for="house">Casa</label>
             <select name="house" id="house">
               <option id='gitnoria-house' name="select" value="Gitnória">Gitnória</option>
@@ -66,12 +67,11 @@
               <option id='corvinode-house' name="select" value="Corvinode">Corvinode</option>
               <option id='pytherina-house' name="select" value="Pytherina" selected>Pytherina</option>
             </select>
-
           </div>
 
         </section>
 
-        <section id="family">
+        <section class="form.container" id="family">
 
           <div class="checkbox-container">
 
@@ -128,7 +128,7 @@
 
         </section>
 
-        <section id="evaluation">
+        <section class="form.container" id="evaluation">
 
           <div>
             <p id="label-rate">Como você avalia a Trybewarts?</p>
@@ -164,12 +164,11 @@
 
             <input type="radio" value="10" name="rate" id="10">
             <label for="10">10</label>
-
           </div>
 
         </section>
 
-        <section id="comments">
+        <section class="form.container" id="comments">
 
           <div class='textarea-container'>
             <label class="textarea" for="textarea">Deixe seu comentário:</label>
@@ -184,7 +183,7 @@
           <label id="label-infos" for="agreement">Você concorda com o uso das informações acima?</label>
         </div>
 
-        <section id="submit">
+        <section class="form.container" id="submit">
           <button id='submit-btn' type="submit" disabled>Enviar</button>
         </section>
       

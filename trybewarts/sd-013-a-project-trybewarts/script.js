@@ -110,7 +110,8 @@ inputCheckboxes();
 
 const inputEvaluation = () => {
   let selected = '';
-  inputSubmitButton.addEventListener('click', () => {
+  inputSubmitButton.addEventListener('click', (e) => {
+    e.preventDefault();
     for (const selected of avaliacao) {
       if (selected.checked) {
         const p = document.createElement('p');
@@ -120,5 +121,4 @@ const inputEvaluation = () => {
     }
   });
 }
-
 inputEvaluation();
