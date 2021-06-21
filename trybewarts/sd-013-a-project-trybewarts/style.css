@@ -49,7 +49,7 @@ main .content-container {
 
 main .image-container {
   display: flex;
-  width: 35%;
+  width: 50%;
 }
 
 main .content-container #evaluation-form {
@@ -57,11 +57,12 @@ main .content-container #evaluation-form {
   width: 675px;
   flex-direction: column;
   justify-content: center;
+  flex-shrink: 1;
 
 }
 
 main .content-container .image-container #trybewarts-forms-logo {
-  height: 90vh;
+  max-width: 325px;
   flex-basis: 100%;
 }
 
@@ -121,14 +122,22 @@ main .content-container #submit {
   border-style: none;
   font-weight: 700;
   padding: 10px;
-  
 }
+
+main .data-container {
+  border: 2px solid blueviolet;
+  font-weight: 700;
+  font-size: 1,2em;
+  text-align: center;
+}
+
 
 footer {
   display: flex;
   flex-direction: row-reverse;
   background-color: rgb(60, 64, 74);
   color: whitesmoke;
+  margin-top: 10px;
   
 }
 

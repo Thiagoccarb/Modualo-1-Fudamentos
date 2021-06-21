@@ -5,8 +5,11 @@ const textarea = document.getElementById('textarea');
 const inputs = document.getElementsByTagName('input');
 const div = document.querySelector('.data-container');
 const form = document.getElementById('evaluation-form');
-const selected = document.querySelector('#house').selectedOptions[0];
+const select = document.querySelectorAll('option[name="select"]');
 const radios = document.querySelectorAll('input[name="family"]');
+const checkboxes = document.querySelectorAll('input[name="option"]:checked');
+const avaliacao = document.querySelectorAll('input[name=rate]');
+
 
 function checkData() {
   const inputButton = document.querySelector('.loginButton');
@@ -44,43 +47,78 @@ function counter() {
 
 counter();
 
-// // const hideForm = () => {
-// //   form.style.display = 'none';
-// // }
-
-// // inputSubmitButton.addEventListener('click', hideForm);
-
-// const inputData = () => {
-//     // inputs
-//     for (let index = 0; index < 5; index++) {
-//       const element = inputs[index];
-//       const p = document.createElement('p');
-//       p.innerText = `${element.name}: ${element.value}`;
-//       div.appendChild(p);
-//     }
-// }
+const hideForm = () => {
+  form.style.display = 'none';
+}
+inputSubmitButton.addEventListener('click', hideForm);
 
 
+const inputData = () => {
+  inputSubmitButton.addEventListener('click', () => {
+    for (let index = 0; index < 5; index++) {
+      const element = inputs[index];
+      const p = document.createElement('p');
+      p.innerText = `${element.name}: ${element.value}`;
+      div.appendChild(p);
+    }
+  });
+}
 
-// const inputSelect = () => {
-//     const p = document.createElement('p');
-//     p.innerHTML = `Casa: ${selected.value}`;
-//     div.appendChild(p);
-// }
+inputData();
 
+const inputSelect = () => {
+  inputSubmitButton.addEventListener('click', () => {
+    for (const element of select) {
+      if (element.selected) {
+        const p = document.createElement('p');
+        p.innerHTML = `Casa: ${element.value}`;
+        div.appendChild(p);
+      }
+    }
+  });
+}
 
-// const inputRadio = () => {
-//     for (let i = 0; i < radios.length; i++) {
-//       const element = radios[i];
-//       if (element.checked) {
-//         p = document.createElement('p');
-//         p.innerHTML = element.checked.value;
-//         div.appendChild(p);
-//         break;
-//       }
-//     }
-// }
+inputSelect();
 
+const inputRadio = () => {
+  for (const radio of radios) {
+    inputSubmitButton.addEventListener('click', () => {
+      if (radio.checked) {
+        const p = document.createElement('p');
+        p.innerHTML = `Família: ${radio.value}`;
+        div.appendChild(p);
+      }
+    });
+  }
+}
 
+inputRadio();
 
+const inputCheckboxes = () => {
+  let selected = '';
+  inputSubmitButton.addEventListener('click', () => {
+    for (const checkbox of checkboxes) {
+      selected += `${checkbox.value},`
+    }
+    const p = document.createElement('p');
+    p.innerHTML = `Conteúdos: ${selected}`;
+    div.appendChild(p);
+  });
+}
 
+inputCheckboxes();
+
+const inputEvaluation = () => {
+  let selected = '';
+  inputSubmitButton.addEventListener('click', () => {
+    for (const selected of avaliacao) {
+      if (selected.checked) {
+        const p = document.createElement('p');
+        p.innerHTML = `Avaliação: ${selected.value}`;
+        div.appendChild(p);
+      }
+    }
+  });
+}
+
+inputEvaluation();
