@@ -58,7 +58,6 @@ main .content-container #evaluation-form {
   flex-direction: column;
   justify-content: center;
   flex-shrink: 1;
-
 }
 
 main .content-container .image-container #trybewarts-forms-logo {
@@ -127,10 +126,9 @@ main .content-container #submit {
 main .data-container {
   border: 2px solid blueviolet;
   font-weight: 700;
-  font-size: 1,2em;
+  font-size: 1, 2em;
   text-align: center;
 }
-
 
 footer {
   display: flex;
@@ -138,7 +136,6 @@ footer {
   background-color: rgb(60, 64, 74);
   color: whitesmoke;
   margin-top: 10px;
-  
 }
 
 footer p {
@@ -150,5 +147,81 @@ footer p {
   display: flex;
 }
 
-@media screen and (min-width: 400px) and (max-width: 850px) {
+@media screen and (min-width: 500px) and (max-width: 700px) {
+  main .content-container {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  main .content-container #evaluation-form {
+    width: 90%;
+  }
+
+  header .trybewarts-header-logo {
+    height: 9vh;
+  }
+
+  header h1 {
+    font-size: x-large;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  main .content-container {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  header #trybewarts-header-title {
+    display: none;
+  }
+
+  main .content-container #evaluation-form {
+    width: 90%;
+  }
+
+  main .image-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .mobileScreen {
+    width: 150px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  header {
+    justify-content: center;
+  }
+
+  main .content-container {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  header #trybewarts-header-title,
+  header .trybewarts-header-logo {
+    display: none;
+  }
+
+  main .content-container #evaluation-form {
+    width: 90%;
+  }
+
+  main .image-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+
+  main .content-container .image-container #trybewarts-forms-logo {
+    max-width: 250px;
+    flex-basis: 100%;
+  }
+
+  .mobileScreen {
+    width: 100px;
+  }
 }

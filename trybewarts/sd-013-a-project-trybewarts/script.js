@@ -12,7 +12,6 @@ const checkboxes = document.querySelectorAll('input[name="option"]');
 const avaliacao = document.querySelectorAll('input[name=rate]');
 const formContainer = document.querySelectorAll('.form-container');
 
-
 function checkData() {
   const inputButton = document.querySelector('.loginButton');
   const loginInput = document.getElementById('login');
@@ -41,13 +40,13 @@ prevent();
 
 function counter() {
   textarea.addEventListener('keyup', () => {
-    if (textarea.value.length >= 0) {
+    if (textarea.value.length > 0) {
       inputCounter.innerText = '500' - textarea.value.length;
     }
   });
 }
 
-counter()
+counter();
 
 const inputNameLastname = () => `Nome: ${inputs[0].value} ${inputs[1].value}`;
 
@@ -55,9 +54,9 @@ const inputEmail = () => `Email: ${email.value}`;
 
 const inputSelect = () => {
   let selected = '';
-  for (const element of select) {
-    if (element.selected) {
-      selected = element.value;
+  for (let i = 0; i < select.length; i += 1) {
+    if (select.selected) {
+      selected = select.value;
     }
   }
   return `Casa: ${selected}`;
@@ -71,44 +70,43 @@ const inputRadio = () => {
     }
   }
   return selected;
-}
+};
 
 const inputCheckboxes = () => {
-  let selected = '';
-  for (let i = 0; i < checkboxes.length; i++) {
+  const selected = [];
+  for (let i = 0; i < checkboxes.length; i += 1) {
     const element = checkboxes[i];
     if (element.checked) {
-      selected += ` ${element.value},`
+      selected.push(` ${element.value}`);
     }
   }
-  return `Matérias: ${selected}`;
-}
+  return `Matérias:${selected}`;
+};
 
 const inputEvaluation = () => {
   let element = '';
-  for (const selected of avaliacao) {
+  for (let i = 0; i < avaliacao.length; i++) {
     if (selected.checked) {
       element = `Avaliação: ${selected.value}`;
     }
   }
   return element;
-}
+};
 
 const inputTextarea = () => `Observações: ${textarea.value}`;
 
 const clearForm = () => {
-  for (let i = 0; i < formContainer.length; i++) {
+  for (let i = 0; i < formContainer.length; i += 1) {
     formContainer[i].style.display = 'none';
   }
-}
+};
 
 const fillData = (str) => {
-
   const p = document.createElement('p');
   p.innerText = str;
   form.appendChild(div);
   div.appendChild(p);
-}
+};
 
 const submitData = () => {
   clearForm();
@@ -119,7 +117,7 @@ const submitData = () => {
   fillData(inputCheckboxes());
   fillData(inputEvaluation());
   fillData(inputTextarea());
-}
+};
 
 inputSubmitButton.addEventListener('click', (e) => {
   e.preventDefault();
