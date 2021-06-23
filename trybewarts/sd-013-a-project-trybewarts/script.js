@@ -11,6 +11,7 @@ const radios = document.querySelectorAll('input[name="family"]');
 const checkboxes = document.querySelectorAll('input[name="option"]');
 const avaliacao = document.querySelectorAll('input[name=rate]');
 const formContainer = document.querySelectorAll('.form-container');
+const dataContainer = document.querySelector('.data-container');
 
 function checkData() {
   const inputButton = document.querySelector('.loginButton');
@@ -55,8 +56,8 @@ const inputEmail = () => `Email: ${email.value}`;
 const inputSelect = () => {
   let selected = '';
   for (let i = 0; i < select.length; i += 1) {
-    if (select.selected) {
-      selected = select.value;
+    if (select[i].selected) {
+      selected = select[i].value;
     }
   }
   return `Casa: ${selected}`;
@@ -64,9 +65,9 @@ const inputSelect = () => {
 
 const inputRadio = () => {
   let selected = '';
-  for (const radio of radios) {
-    if (radio.checked) {
-      selected = `Família: ${radio.value}`;
+  for (let i = 0; i < radios.length; i += 1) {
+    if (radios[i].checked) {
+      selected = `Família: ${radios[i].value}`;
     }
   }
   return selected;
@@ -85,13 +86,15 @@ const inputCheckboxes = () => {
 
 const inputEvaluation = () => {
   let element = '';
-  for (let i = 0; i < avaliacao.length; i++) {
-    if (selected.checked) {
-      element = `Avaliação: ${selected.value}`;
+  for (let i = 0; i < avaliacao.length; i += 1) {
+    if (avaliacao[i].checked) {
+      element = `Avaliação: ${avaliacao[i].value}`;
     }
   }
   return element;
 };
+
+console.log(inputEvaluation());
 
 const inputTextarea = () => `Observações: ${textarea.value}`;
 
@@ -120,6 +123,7 @@ const submitData = () => {
 };
 
 inputSubmitButton.addEventListener('click', (e) => {
+  dataContainer.style.display = 'inline-block';
   e.preventDefault();
   submitData();
 });

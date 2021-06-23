@@ -24,8 +24,7 @@ header .trybewarts-login {
   display: flex;
 }
 
-header .trybewarts-login #login,
-header .trybewarts-login #senha {
+header .trybewarts-login #login , header .trybewarts-login #senha {
   width: 100px;
   margin: 0 10px;
   border-radius: 5px;
@@ -39,6 +38,12 @@ header .trybewarts-login .loginButton {
   color: white;
   border-radius: 5px;
   border-style: none;
+  font-weight: 700;
+}
+
+.data-container {
+  display: none;
+  font-size: 1.6em;
   font-weight: 700;
 }
 
@@ -73,7 +78,7 @@ main .content-container #name-lastname {
 
 main .content-container #email-options {
   display: flex;
-  margin: 10px 10px 10px;
+  margin: 10px 10px 10px 0;
   justify-content: space-between;
 }
 
@@ -89,7 +94,7 @@ main .content-container #family .checkbox-container {
   justify-content: space-between;
 }
 
-main .content-container #family .checkbox-container:nth-child(2) {
+main .content-container #family .checkbox-container:nth-child( 2 ) {
   width: 46%;
 }
 
@@ -147,7 +152,8 @@ footer p {
   display: flex;
 }
 
-@media screen and (min-width: 500px) and (max-width: 700px) {
+@media screen and ( min-width : 500px ) and ( max-width : 700px ) {
+
   main .content-container {
     flex-direction: column-reverse;
     align-items: center;
@@ -166,7 +172,8 @@ footer p {
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and ( max-width : 500px ) {
+
   main .content-container {
     flex-direction: column-reverse;
     align-items: center;
@@ -191,7 +198,8 @@ footer p {
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and ( max-width : 400px ) {
+
   header {
     justify-content: center;
   }
@@ -201,8 +209,7 @@ footer p {
     align-items: center;
   }
 
-  header #trybewarts-header-title,
-  header .trybewarts-header-logo {
+  header #trybewarts-header-title , header .trybewarts-header-logo {
     display: none;
   }
 
