@@ -1,3 +1,39 @@
+const expectedResult = [
+  { 
+    id: 1,
+    name: 'As Crônicas de Gelo e Fogo',
+    genre: 'Fantasia',
+    author: { name: 'George R. R. Martin', birthYear: 1948 },
+    releaseYear: 1991
+  },
+  {
+    id: 2,
+    name: 'O Senhor dos Anéis',
+    genre: 'Fantasia',
+    author: { name: 'J. R. R. Tolkien', birthYear: 1892 },
+    releaseYear: 1954
+  },
+  {
+    id: 3,
+    name: 'Fundação',
+    genre: 'Ficção Científica',
+    author: { name: 'Isaac Asimov', birthYear: 1920 },
+    releaseYear: 1951
+  },
+  {
+    id: 4,
+    name: 'Duna',
+    genre: 'Ficção Científica',
+    author: { name: 'Frank Herbert', birthYear: 1920 },
+    releaseYear: 1965
+  }
+];
+
+function fantasyOrScienceFiction() {
+  // escreva seu código aqui
+}
+
+
 const assert = require('assert');
 
 const books = [
@@ -63,18 +99,13 @@ const books = [
   },
 ];
 
-//7 - Faça uma função que retorne true , caso nenhum author tenha nascido no mesmo ano, e false , caso contrário.
+//3 - Crie um array com todos os objetos que possuem gênero ficção científica ou fantasia.
 
-const checkBirthday = books.forEach((book) => {
-  for (let i = 0; i < books.length - 1; i += 1) {
-    for (let j = i+1; j < books.length; j += 1) {
-      if (books[i].author.birthYear === books[j].author.birthYear) {
-        return true;
-        break;
-      }
-      return false;
-    }
-  }
-});
+const newArr = () => {
+ return books.filter((element) => element.genre === 'Ficção Científica'|| element.genre === 'Fantasia');
+}
 
-console.log(checkBirthday);
+//console.log(newArr())
+
+
+assert.deepStrictEqual(newArr(), expectedResult);

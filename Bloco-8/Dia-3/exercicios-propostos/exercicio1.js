@@ -63,18 +63,9 @@ const books = [
   },
 ];
 
-//7 - Faça uma função que retorne true , caso nenhum author tenha nascido no mesmo ano, e false , caso contrário.
+//1 - Crie um array com strings no formato NOME_DO_LIVRO - GÊNERO_DO_LIVRO - NOME_DA_PESSOA_AUTORA
 
-const checkBirthday = books.forEach((book) => {
-  for (let i = 0; i < books.length - 1; i += 1) {
-    for (let j = i+1; j < books.length; j += 1) {
-      if (books[i].author.birthYear === books[j].author.birthYear) {
-        return true;
-        break;
-      }
-      return false;
-    }
-  }
-});
-
-console.log(checkBirthday);
+const upperCase = () => {
+return books.map((newStyle) => `${newStyle.name} - ${newStyle.genre} - ${newStyle.author.name}`);
+}
+console.log(upperCase());
