@@ -66,17 +66,18 @@ const books = [
 
 let maior = 0;
 let livro;
-const shortestBook = books.forEach((book) => {
-  if (book.name.length > maior){
-    maior = book.name.length;
-    //console.log(maior);
-    livro = book.name;
-    console.log(livro);
-  }
+const largestBook = () => {
+  books.forEach((book) => {
+    if (book.name.length > maior) {
+      maior = book.name.length;
+      //console.log(maior);
+      livro = book.name;
+    }
+  })
   return livro;
-});
+}
 
-console.log(shortestBook);
+console.log(largestBook());
 
 // function smallerName() {
 //   let nameBook;
