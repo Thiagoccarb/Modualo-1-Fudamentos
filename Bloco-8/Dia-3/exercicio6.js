@@ -63,18 +63,20 @@ const books = [
   },
 ];
 
-//7 - Faça uma função que retorne true , caso nenhum author tenha nascido no mesmo ano, e false , caso contrário.
 
-const checkBirthday = books.forEach((book) => {
-  for (let i = 0; i < books.length - 1; i += 1) {
-    for (let j = i+1; j < books.length; j += 1) {
-      if (books[i].author.birthYear === books[j].author.birthYear) {
-        return true;
-        break;
-      }
-      return false;
-    }
-  }
-});
+//6 - Crie um array com o nome de todos os livros com mais de 60 anos de publicação.
 
-console.log(checkBirthday);
+const expectedResult = [
+  'O Senhor dos Anéis',
+  'Fundação',
+  'O Chamado de Cthulhu',
+];
+
+function oldBooks() {
+  const booksOver60 = books.filter((element)=>(2021 - element.releaseYear > 60));
+  return booksOver60.map((element) => element.name);
+};
+
+
+
+assert.deepStrictEqual(oldBooks(), expectedResult);

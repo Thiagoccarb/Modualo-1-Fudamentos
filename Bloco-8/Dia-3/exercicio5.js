@@ -1,5 +1,13 @@
 const assert = require('assert');
 
+const expectedResult = [
+  'Frank Herbert',
+  'George R. R. Martin',
+  'Isaac Asimov',
+  'J. R. R. Tolkien',
+];
+
+
 const books = [
   {
     id: 1,
@@ -62,19 +70,23 @@ const books = [
     releaseYear: 1928,
   },
 ];
+//5 - Crie um array em ordem alfabética apenas com os nomes de todas as pessoas autoras de ficção científica ou fantasia.
 
-//7 - Faça uma função que retorne true , caso nenhum author tenha nascido no mesmo ano, e false , caso contrário.
+function fantasyOrScienceFictionAuthors() {
+  const authorFilter = books.filter((element) => element.genre === 'Fantasia' || element.genre === 'Ficção Científica');
+  const authorFilterName = authorFilter.map((element) => element.author.name);
+  const sorted =  authorFilterName.sort();
+  return sorted;
+}
 
-const checkBirthday = books.forEach((book) => {
-  for (let i = 0; i < books.length - 1; i += 1) {
-    for (let j = i+1; j < books.length; j += 1) {
-      if (books[i].author.birthYear === books[j].author.birthYear) {
-        return true;
-        break;
-      }
-      return false;
-    }
-  }
-});
+console.log(fantasyOrScienceFictionAuthors())
 
-console.log(checkBirthday);
+assert.deepStrictEqual(fantasyOrScienceFictionAuthors(), expectedResult);
+
+const a = [
+  'George R. R. Martin',
+  'J. R. R. Tolkien',
+  'Isaac Asimov',
+  'Frank Herbert'
+];
+

@@ -63,18 +63,16 @@ const books = [
   },
 ];
 
-//7 - Faça uma função que retorne true , caso nenhum author tenha nascido no mesmo ano, e false , caso contrário.
+//7 - Encontre o nome do livro escrito pela pessoa cujo nome registrado começa com três iniciais.
 
-const checkBirthday = books.forEach((book) => {
-  for (let i = 0; i < books.length - 1; i += 1) {
-    for (let j = i+1; j < books.length; j += 1) {
-      if (books[i].author.birthYear === books[j].author.birthYear) {
-        return true;
-        break;
-      }
-      return false;
-    }
-  }
-});
+const findAuthor = () => {
+  const book = books.filter((element) => (element.author.name[1] === '.' && element.author.name[4] === '.' && element.author.name[7] === '.'))
+  return book.map((element) => element.name).toString();
+}
 
-console.log(checkBirthday);
+//console.log(findAuthor());
+
+const expectedResult = 'O Senhor dos Anéis';
+
+
+assert.deepStrictEqual(findAuthor(), expectedResult);
