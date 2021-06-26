@@ -64,17 +64,25 @@ const books = [
 ];
 
 //7 - Faça uma função que retorne true , caso nenhum author tenha nascido no mesmo ano, e false , caso contrário.
-
-const checkBirthday = books.forEach((book) => {
-  for (let i = 0; i < books.length - 1; i += 1) {
-    for (let j = i+1; j < books.length; j += 1) {
-      if (books[i].author.birthYear === books[j].author.birthYear) {
-        return true;
-        break;
+const checkauthorsBirth1 = () => {
+  let check;
+  const checkBirthday = books.forEach((book) => {
+    for (let i = 0; i < books.length - 1; i += 1) {
+      for (let j = i + 1; j < books.length; j += 1) {
+        if (books[i].author.birthYear === books[j].author.birthYear) {
+          check = true;
+        }
+        check = false;
       }
-      return false;
     }
-  }
-});
+  });
+  return check;
+}
 
-console.log(checkBirthday);
+//using 2 HoF
+
+const checkauthorsBirth2 = () => {
+  return books.every((book) => !books.some((booksome) => (book.author.birthYear === booksome.author.birthYear) && (book.author.name !== booksome.author.name)));
+}
+
+assert.deepStrictEqual(checkauthorsBirth1(), checkauthorsBirth2());
