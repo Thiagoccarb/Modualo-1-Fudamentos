@@ -99,16 +99,31 @@ const estudantes = [
   },
 ];
 
-// const getBestClass = (acc, materia) => {
-//   if (acc.nota > materia.nota) return acc;
-//   return materia;
-// };
 
-const reportBetter = (students) => students.map((student) => ({
-  name: student.nome,
-  nota: student.materias.reduce((acc, materia)=> {
+// const studentBestGrade1 = () => {
+//   const obj = estudantes.map((student) => ({
+//     estudante: estudantes.nome,
+//     melhor_materia: estudantes.materias.reduce((acc, element) => {
+//       if (acc.nota > element.nota) return acc;
+//       return element;
+//     })
+//   }))
+// }
+
+// console.log(studentBestGrade1())
+
+
+  const getBestClass = (acc, materia) => {
     if (acc.nota > materia.nota) return acc;
-  return materia;
-  }).nota}));
+    return materia;
+  };
 
-console.log(reportBetter(estudantes));
+  const reportBetter = (students) => students.map((student) => ({
+    name: student.nome,
+    nota: student.materias.reduce((acc, materia)=> {
+      if (acc.nota > materia.nota) return acc;
+    return materia;
+    })
+  }.nota));
+
+  console.log(reportBetter(estudantes));

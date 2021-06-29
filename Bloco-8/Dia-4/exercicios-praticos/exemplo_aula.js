@@ -1,4 +1,5 @@
 const assert = require('assert');
+const { Cipher } = require('crypto');
 
 const players = [
   { fullName: 'Adriano Imperador', email: 'didico@futebol.br' },
@@ -9,13 +10,22 @@ const players = [
 
 // crie um objeto com o nome de cada jogador e e-mail
 
-const newPlayers = players.reduce((accumulator, currentValue) => {
-  console.log('accumulator:', accumulator, 'currentValue:', currentValue);
-  accumulator[currentValue.fullName] = currentValue.email;
-  return accumulator;
-},{});
+const a =  players.reduce((acc, element) => {
+  console.log('accumulator:', acc, 'currentValue:', element)
+    acc[element.fullName] = element.email;
+      return acc;
+  }, {});
 
-console.log(newPlayers);
+console.log(a);
+
+
+// const newPlayers = players.reduce((accumulator, currentValue) => {
+//   console.log('accumulator:', accumulator, 'currentValue:', currentValue);
+//   accumulator[currentValue.fullName] = currentValue.email;
+//   return accumulator;
+// },{});
+
+// console.log(newPlayers);
 
 //Testes
 const expectedValues = {
