@@ -8,5 +8,5 @@ test("Testa chamada, retorno e parâmetros passados para soma com entrada de doi
   expect(mockSomar).toHaveBeenCalled();
   expect(mockSomar).toHaveBeenCalledTimes(1);
   expect(mockSomar).toHaveBeenCalledWith(2, 3);
-  expect(mockSomar(2, 3)).resolves.toBe(5);
+  expect(mockSomar(7, 3)).resolves.toBe(5);
 });

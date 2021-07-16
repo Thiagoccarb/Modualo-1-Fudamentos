@@ -9,7 +9,7 @@
 //    expect(operations.subtrair).toHaveBeenCalledTimes(1);
 //    expect(result).toBe(1);
 //  });
-const service = require('./exercicio2');
+const service = require('./exercicio1');
 
  test("testar chamada da função subtrair", () => {
    service.subtrair = jest.fn();

@@ -12,9 +12,8 @@ test('Testa chamada, retorno e parâmetros da função dividir', () => {
   expect(mockSubtrair).toHaveBeenCalledWith(4, 2);
 
   mockSubtrair.mockRestore();
-  mockSubtrair.mockReturnValue(8);
 
-  expect(mockSubtrair(6, 2)).toBe(8);
+  expect(mockSubtrair(6, 2)).toBe(undefined);
   expect(mockSubtrair).toHaveBeenCalled();
   expect(mockSubtrair).toHaveBeenCalledTimes(1);
   expect(mockSubtrair).toHaveBeenCalledWith(6, 2);
